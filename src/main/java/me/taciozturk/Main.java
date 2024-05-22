@@ -62,13 +62,6 @@ public class Main {
         Group newGroup10 = new Group("You will (absolutely not optional) marry with me !");
 
 
-        User ub = new UserBuilder("erdem abi","mustafa@gmail.com","erdem1234")
-                .setSearchable(true)
-                .build();
-
-        register.register(ub);
-
-
 
         Runtime.getRuntime().addShutdownHook(new Thread() {
             public void run() {
