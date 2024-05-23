@@ -26,10 +26,17 @@ public class UserCreator {
         String password = scanner.nextLine();
 
 
-        User userBuilder = new UserBuilder(name, email,password)
-                .build();
+        /*
+        ErkekUserBuilder ErkekUserBuilder = new ErkekUserBuilder(name, email,password);
+        Director director = new Director(ErkekUserBuilder);
+        User user = director.build();
+         */
 
-        register.register(userBuilder);
+        KadinUserBuilder kadinUserBuilder = new KadinUserBuilder(name, email,password);
+        Director director = new Director(kadinUserBuilder);
+        User user = director.build();
+
+        register.register(user);
     }
 
 
@@ -46,10 +53,11 @@ public class UserCreator {
         password.append(name);
         password.append(1);
         String pass = password.toString();
-        User user = new UserBuilder(name, email, pass)
-                .setAvatar("src/main/resources/assets/avatars/man-1-3d.jpg")
-                .setSearchable(true)
-                .build();
+
+        ErkekUserBuilder ErkekUserBuilder = new ErkekUserBuilder(name, email,pass);
+        Director director = new Director(ErkekUserBuilder);
+        User user = director.build();
+
         Post post = new Post(user.getName(),user.getId(),new Date());
         user.addPost(post);
 

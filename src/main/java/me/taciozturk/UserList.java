@@ -70,7 +70,7 @@ public class UserList implements IAddFriendObserver {
 
     @Override
     public void removeObserver(IObserver observer) {
-        observers.add(observer);
+        observers.remove(observer);
 
     }
 

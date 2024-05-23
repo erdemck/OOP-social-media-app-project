@@ -4,7 +4,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 
-public class UserBuilder {
+public abstract class UserBuilder {
 
     private String name;
     private String email;
@@ -73,16 +73,35 @@ public class UserBuilder {
         return this;
     }
 
-    public User build() {
-        User user = new User();
-        user.setName(name);
-        user.setEmail(email);
-        user.setHashedPassword(hashedPassword);
-        user.setConnections(connections);
-        user.setGroups(groups);
-        user.setSearchable(searchable);
-        user.setAvatar(avatar);
-        user.setId();
-        return user;
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getHashedPassword() {
+        return hashedPassword;
+    }
+
+    public ArrayList<Integer> getConnections() {
+        return connections;
+    }
+
+    public ArrayList<Integer> getGroups() {
+        return groups;
+    }
+
+    public Boolean getSearchable() {
+        return searchable;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public ArrayList<Post> getPosts() {
+        return posts;
     }
 }
